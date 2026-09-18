@@ -1118,7 +1118,7 @@
   });
   act({
     id: 'work_ot', verb: '工作', label: '加班', stages: ['work'],
-    hint: '换取奖金和晋升，代价是压力和健康。第48章。',
+    hint: '换取奖金和晋升，代价是压力和健康。',
     avail: (s) => !!s.p.job,
     run: (c) => {
       const { s, E, rng } = c;
@@ -1212,7 +1212,7 @@
   });
   act({
     id: 'study_exam_gov', verb: '学习', label: '备考 · 考公考编', stages: ['uni', 'work', 'gap'],
-    hint: '第38章。上岸需要长期积累，而且录取比例极低。',
+    hint: '上岸需要长期积累，而且录取比例极低。',
     run: (c) => {
       const { s, E } = c;
       s.p.examPrep = (s.p.examPrep || 0) + 1;
@@ -1248,7 +1248,7 @@
   });
   act({
     id: 'money_side', verb: '搞钱', label: '做副业', stages: ['uni', 'work', 'gap'],
-    hint: '第52章。慢热，可能起飞，也可能白干一年。',
+    hint: '慢热，可能起飞，也可能白干一年。',
     run: (c) => {
       const { s, E, rng } = c;
       s.p.sideLevel = (s.p.sideLevel || 0) + E.growth('side', 1.0);
@@ -1282,7 +1282,7 @@
   });
   act({
     id: 'money_stall', verb: '搞钱', label: '摆摊', stages: ['work', 'gap'],
-    hint: '第46章。要本钱，要选址，要看城管和天气。',
+    hint: '要本钱，要选址，要看城管和天气。',
     avail: (s) => s.p.cash > 3000,
     run: (c) => {
       const { s, E, rng } = c;
@@ -1361,7 +1361,7 @@
   });
   act({
     id: 'house_buy', verb: '房产', label: '买房', stages: ['work'],
-    hint: '第27章。三十年，绑定你的职业选择、婚姻稳定和风险承受能力。',
+    hint: '三十年，绑定你的职业选择、婚姻稳定和风险承受能力。',
     avail: (s) => !s.p.house && s.p.cash + s.family.cash > s.city.price * s.world.priceIdx * 78 * 0.3,
     run: (c) => {
       const { s, E } = c;
@@ -1416,7 +1416,7 @@
   });
   act({
     id: 'soc_drink', verb: '社交', label: '酒桌', stages: ['work'],
-    hint: '第71章。关系涨得快，身体掉得也快。',
+    hint: '关系涨得快，身体掉得也快。',
     avail: (s) => !!s.p.job,
     run: (c) => {
       const { E, rng } = c;
@@ -1452,19 +1452,19 @@
   });
   act({
     id: 'soc_gift', verb: '社交', label: '送礼请托', stages: ['work', 'gap'],
-    hint: '第70章。花钱花格子，换一次请托机会。对方帮不帮，看他自己的处境。',
+    hint: '花钱花格子，换一次请托机会。对方帮不帮，看他自己的处境。',
     avail: (s) => s.p.cash > 2000,
     run: (c) => c.E.favorAsk(),
   });
   act({
     id: 'soc_blind', verb: '社交', label: '相亲', stages: ['work', 'gap'],
-    hint: '第55章。你的条件是明码标价的：城市、房、车、学历、收入、户口。',
+    hint: '你的条件是明码标价的：城市、房、车、学历、收入、户口。',
     avail: (s) => s.p.age >= 23 && !s.p.partner,
     run: (c) => c.E.blindDate(),
   });
   act({
     id: 'soc_ask', verb: '社交', label: '打听消息', stages: ['hs', 'uni', 'work', 'gap'],
-    hint: '花一格去核实一条传闻。信息是能用时间买的资源（第128章）。',
+    hint: '花一格去核实一条传闻。信息是能用时间买的资源。',
     run: (c) => c.E.investigate(),
   });
   act({
@@ -1491,7 +1491,7 @@
   });
   act({
     id: 'fam_money', verb: '家庭', label: '给家里钱', stages: ['work', 'gap'],
-    hint: '第64章养老系统的日常形态。',
+    hint: '养老系统的日常形态。',
     avail: (s) => s.p.cash > 1000,
     run: (c) => {
       const { s, E } = c;
@@ -1550,7 +1550,7 @@
   });
   act({
     id: 'body_treat', verb: '身体', label: '看病治疗', stages: ['hs', 'uni', 'work', 'gap'],
-    hint: '花钱花时间。报销比例取决于社保（第67章）。',
+    hint: '花钱花时间。报销比例取决于社保。',
     avail: (s) => s.p.diseases.length > 0,
     run: (c) => c.E.treat(),
   });
@@ -1558,7 +1558,7 @@
   /* —— 休息 —— */
   act({
     id: 'rest_lie', verb: '休息', label: '躺平', stages: ['hs', 'uni', 'work', 'gap'],
-    hint: '第114章。系统不评判。但格子确实消失了。',
+    hint: '系统不评判。但格子确实消失了。',
     run: (c) => {
       const { E } = c;
       E.stress(-14); E.health(+0.6);
@@ -1608,7 +1608,7 @@
   });
   act({
     id: 'life_home', verb: '人生决策', label: '回老家', stages: ['work', 'gap'],
-    hint: '第115章：世界在内卷，你有权不参与。',
+    hint: '世界在内卷，你有权不参与。',
     avail: (s) => s.p.city !== s.family.home,
     run: (c) => {
       const { s, E } = c;
