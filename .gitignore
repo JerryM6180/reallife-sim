@@ -1,0 +1,20 @@
+# 构建产物 —— build.py 从 js/ 拼出来的单文件。
+# 每次构建整个文件都变，提交进去会把 diff 历史冲垮。
+build/reallife-demo.html
+
+# 生成的阶梯速查表（spec/gen.py 从 ladders.json 生成）
+spec/ladders.html
+
+# 早期内容生成过程留下的中间产物，1.2MB，已经全部落进 js/ 了
+wf/
+
+# Python
+__pycache__/
+*.pyc
+
+# 编辑器与系统
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
