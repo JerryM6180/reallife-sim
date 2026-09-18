@@ -132,7 +132,7 @@ TH = ('<thead><tr><th>职业线</th><th class="r">格数</th><th class="r">起�
 
 doc = (HEAD + '<style>' + CSS + '</style>\n<div class="wrap">\n'
        + '<h1>职 业 阶 梯 表</h1>\n'
-       + '<div class="sub">现实纪元 · 35 条职业线 · 253 个职级 · 杭州基准税前月薪</div>\n'
+       + '<div class="sub">人生模拟器 · 35 条职业线 · 253 个职级 · 杭州基准税前月薪</div>\n'
        + LEAD
        + '<h2>全 表 · 按 倍 数 排</h2>\n<div class="tblwrap"><table>' + TH + '<tbody>' + summary + '</tbody></table></div>\n'
        + '<h2>逐 条 职 级</h2>\n<div class="grid">' + ''.join(cards) + '</div>\n'

@@ -22,7 +22,7 @@
 
   function renderStart() {
     app.innerHTML = `
-      <h1>现 实 纪 元 · 人 生 模 拟 器</h1>
+      <h1>人 生 模 拟 器</h1>
       <div class="sub">DEMO v0.2 &nbsp;·&nbsp; 16 岁 → 26 岁 &nbsp;·&nbsp; 一格时间 = 一个月 = 干一件事</div>
 
       <div class="card">
@@ -505,7 +505,7 @@
     if (screen === 'start') return renderStart();
     if (screen === 'end') return renderEnd();
 
-    app.innerHTML = `<h1>现 实 纪 元</h1><div class="sub">DEMO v0.2 · 16 → 26 岁</div>
+    app.innerHTML = `<h1>人 生 模 拟 器</h1><div class="sub">DEMO v0.2 · 16 → 26 岁</div>
       <div class="grid"><div>${panel()}</div><div>${feed()}${actionArea()}</div></div>`;
 
     app.querySelectorAll('[data-v]').forEach((b) => { b.onclick = () => { verb = b.dataset.v; render(); }; });
