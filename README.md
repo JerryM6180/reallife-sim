@@ -2,6 +2,8 @@
 
 一个跑在浏览器里的中国当代人生模拟器。一格时间是一个月，一个月你只能干一件事 —— 这是全部的规则。DEMO 从 2026 年 9 月、16 岁的高中开始，跑到 26 岁那一格为止，中间会经过 2028 年 6 月的高考、填志愿、毕业和找工作。
 
+**在线试玩：https://jerrym6180.github.io/reallife-sim/**
+
 纯 JavaScript，没有框架，没有 npm，没有任何运行时依赖。要出单文件版的时候用一次 Python，就这一处。
 
 ---
@@ -29,7 +31,7 @@
 ## 怎么跑起来
 
 ```
-git clone <仓库地址>
+git clone https://github.com/JerryM6180/reallife-sim.git
 cd reallife-sim
 ```
 
