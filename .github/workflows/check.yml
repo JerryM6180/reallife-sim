@@ -1,0 +1,17 @@
+# main 就是线上试玩（GitHub Pages 直接从 main 出）。
+# 所以每个 PR 合进去之前，先让机器人活 300 辈子。
+name: check
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  bot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - run: node --version
+      - run: node tools/bot.js --lives 300

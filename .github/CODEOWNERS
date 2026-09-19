@@ -1,0 +1,7 @@
+# 动到这些文件的 PR 会自动请 @JerryM6180 来看。
+# 内容文件（tracks_* / jobevents_* / events* / content.js）不设负责人，谁审都行。
+
+/js/engine.js   @JerryM6180
+/js/rng.js      @JerryM6180
+/tools/         @JerryM6180
+/.github/       @JerryM6180

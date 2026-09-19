@@ -1,0 +1,31 @@
+name: 认领一块活
+description: 动手之前先占个坑，免得两个人写了同一条线
+body:
+  - type: markdown
+    attributes:
+      value: 开了这个 issue 就把自己设成 Assignee。做完的 PR 里写 `Closes #编号`，合并时它会自己关掉。
+  - type: dropdown
+    id: kind
+    attributes:
+      label: 哪一类
+      options:
+        - 内容 · 职业线 / 岗位
+        - 内容 · 事件 / 文案
+        - 数值平衡
+        - 界面
+        - 引擎
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: 要做什么
+      placeholder: 给教师线补 6 条岗位事件（班主任、评职称、家长投诉…）
+    validations:
+      required: true
+  - type: input
+    id: files
+    attributes:
+      label: 会动到哪些文件
+      description: 新内容尽量开新文件。要改 engine.js 的话先在这里说一声。
+      placeholder: 新建 js/jobevents_d.js

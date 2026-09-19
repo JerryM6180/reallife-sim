@@ -15,6 +15,7 @@
   const J = (track, o) => {
     const ev = Object.assign({ tier: 'situation', weight: 16, cooldown: 30 }, o);
     ev.job = true;   // 打上标记：抽事件的时候这类有单独的份额
+    ev.track = track;   // 留个底：tools/bot.js 靠它查线名有没有写错
     ev.when = (s) => s.p.track === track && !!s.p.job
       && (s.p.rank || 0) >= (o.minRank || 0)
       && (o.maxRank === undefined || (s.p.rank || 0) <= o.maxRank)

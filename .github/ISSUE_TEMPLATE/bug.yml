@@ -1,0 +1,55 @@
+name: 报 bug
+description: 游戏里出了不对劲的事
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        同一个种子 + 同样的选择 = 一模一样的人生。所以只要有**种子**，这个 bug 就一定能重现。
+        种子在游戏画面顶上：`第 N 格 · 种子 123456789`。
+  - type: input
+    id: seed
+    attributes:
+      label: 种子
+      placeholder: "123456789"
+    validations:
+      required: true
+  - type: input
+    id: start
+    attributes:
+      label: 开局
+      description: 选的什么出身、什么天赋（随机的话写随机）
+      placeholder: 城市工薪家庭 · 随机
+    validations:
+      required: true
+  - type: input
+    id: when
+    attributes:
+      label: 出事的时候
+      description: 第几格、几岁
+      placeholder: 第 143 格 · 27 岁
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: 你之前点了什么
+      description: 不用从 16 岁写起。出事前那几个月做了什么、选了哪个选项，记得多少写多少。
+      placeholder: |
+        在三甲当主治。连着加班三个月 → 弹了「父亲住院」选了回去 → 下个月…
+    validations:
+      required: true
+  - type: textarea
+    id: saw
+    attributes:
+      label: 看到了什么 / 本来应该是什么
+      placeholder: |
+        看到：父母两个人都变成「术后恢复」
+        应该：只有父亲
+    validations:
+      required: true
+  - type: textarea
+    id: shot
+    attributes:
+      label: 截图
+      description: 有就拖进来。页面白屏的话，按 F12 把 Console 里红色的那几行也贴上。

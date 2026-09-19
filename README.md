@@ -71,21 +71,21 @@ python build.py
 
 | 文件 | 负责什么 |
 |---|---|
-| `js/rng.js` || mulberry32 种子随机。整个引擎只允许通过这里取随机。`next / int / float / chance / pick / weighted / shuffle / normal`，加上 `save / load`（存档要存住随机数状态）。不存在「幸运值」属性 —— 随机就是随机，不给玩家任何接口去影响它。 |
-| `js/content.js` || 内容层，引擎不认识里面任何具体内容。10 座城市、9 种出身、6 个天赋、11 种疾病、10 个行业、109 条手写岗位、5 类高中、32 所大学、23 个专业、11 个理财标的、9 个动词下的 45 个行动、21 条通用事件、9 个传闻来源和 12 条传闻模板。职业线只在这里写了 1 条（银行）当样板，其余在 `tracks_*.js`。 |
-| `js/tracks_a.js` || 职业线 · 第一批：体制内 / 教育 / 医疗，14 条。 |
-| `js/tracks_b.js` || 职业线 · 第二批：互联网 / 金融 / 制造建筑，13 条。 |
-| `js/tracks_c.js` || 职业线 · 第三批：服务 / 物流 / 文化传媒 / 法律，11 条。 |
-| `js/jobtracks.js` || 把散岗接到职业线上。`MAP` 里 97 条写「它属于哪条线」，进哪一格由工资自动对齐；`NO_LADDER` 里 11 条写「这份工作真的没有下一格」，并且写清楚为什么。剩下 1 条岗位自带 `track`。没挂上也没写进 `NO_LADDER` 的会进 `CONTENT.JOBTRACK_REPORT.miss`。 |
-| `js/jobevents_a.js` || 岗位遭遇事件 · 第一批：体制内 / 教育 / 医疗，29 条。 |
-| `js/jobevents_b.js` || 岗位遭遇事件 · 第二批：互联网 / 金融 / 制造 / 建筑，23 条。 |
-| `js/jobevents_c.js` || 岗位遭遇事件 · 第三批：服务 / 物流 / 文化传媒 / 法律，19 条。 |
-| `js/events2.js` || 第二批通用事件，24 条。单独一个文件，方便继续往里堆。 |
-| `js/engine.js` || 引擎，纯逻辑零 DOM。月度结算、税后工资与房租与生活成本、技能成长与专业等级、关口（高考 / 志愿 / 毕业 / 求职）、岗位三态与八种发现途径、晋升概率与结算、事件抽取、行情、疾病、NPC 与家庭、存读档。对外只暴露 `Engine.*`。 |
-| `js/ui.js` || UI 层，只负责渲染和输入，所有规则都在 engine 里。开局页、左侧状态栏、中间时间流、行动区、折线图、行情窗口、岗位板、年表、结局、localStorage 存档。 |
-| `build.py` || 把 `build/shell.html` 和上面 12 个 js 拼成 `build/reallife-demo.html`。它做的唯一一件额外的事是删掉 shell 里一个写错的空嵌套 CSS 块。 |
+| `js/rng.js` | mulberry32 种子随机。整个引擎只允许通过这里取随机。`next / int / float / chance / pick / weighted / shuffle / normal`，加上 `save / load`（存档要存住随机数状态）。不存在「幸运值」属性 —— 随机就是随机，不给玩家任何接口去影响它。 |
+| `js/content.js` | 内容层，引擎不认识里面任何具体内容。10 座城市、9 种出身、6 个天赋、11 种疾病、10 个行业、109 条手写岗位、5 类高中、32 所大学、23 个专业、11 个理财标的、9 个动词下的 45 个行动、21 条通用事件、9 个传闻来源和 12 条传闻模板。职业线只在这里写了 1 条（银行）当样板，其余在 `tracks_*.js`。 |
+| `js/tracks_a.js` | 职业线 · 第一批：体制内 / 教育 / 医疗，14 条。 |
+| `js/tracks_b.js` | 职业线 · 第二批：互联网 / 金融 / 制造建筑，13 条。 |
+| `js/tracks_c.js` | 职业线 · 第三批：服务 / 物流 / 文化传媒 / 法律，11 条。 |
+| `js/jobtracks.js` | 把散岗接到职业线上。`MAP` 里 97 条写「它属于哪条线」，进哪一格由工资自动对齐；`NO_LADDER` 里 11 条写「这份工作真的没有下一格」，并且写清楚为什么。剩下 1 条岗位自带 `track`。没挂上也没写进 `NO_LADDER` 的会进 `CONTENT.JOBTRACK_REPORT.miss`。 |
+| `js/jobevents_a.js` | 岗位遭遇事件 · 第一批：体制内 / 教育 / 医疗，29 条。 |
+| `js/jobevents_b.js` | 岗位遭遇事件 · 第二批：互联网 / 金融 / 制造 / 建筑，23 条。 |
+| `js/jobevents_c.js` | 岗位遭遇事件 · 第三批：服务 / 物流 / 文化传媒 / 法律，19 条。 |
+| `js/events2.js` | 第二批通用事件，24 条。单独一个文件，方便继续往里堆。 |
+| `js/engine.js` | 引擎，纯逻辑零 DOM。月度结算、税后工资与房租与生活成本、技能成长与专业等级、关口（高考 / 志愿 / 毕业 / 求职）、岗位三态与八种发现途径、晋升概率与结算、事件抽取、行情、疾病、NPC 与家庭、存读档。对外只暴露 `Engine.*`。 |
+| `js/ui.js` | UI 层，只负责渲染和输入，所有规则都在 engine 里。开局页、左侧状态栏、中间时间流、行动区、折线图、行情窗口、岗位板、年表、结局、localStorage 存档。 |
+| `build.py` | 把 `build/shell.html` 和上面 12 个 js 拼成 `build/reallife-demo.html`。它做的唯一一件额外的事是删掉 shell 里一个写错的空嵌套 CSS 块。 |
 
-另外：`serve.py` 是个七行的静态服务器；`build/shell.html` 是单文件版的外壳（只有样式和一个 `#app`，script 由 `build.py` 追加）；`spec/gen.py` 从 `spec/ladders.json` 生成一份职业阶梯速查表，跟运行时无关。
+另外：`tools/bot.js` 是无头回归机器人 —— 不开浏览器活几百辈子，查语法、查文案里的 `undefined`、查同种子还能不能复现，每个 PR 上 GitHub 会自动跑（怎么协作见 [CONTRIBUTING.md](CONTRIBUTING.md)）；`serve.py` 是个七行的静态服务器；`build/shell.html` 是单文件版的外壳（只有样式和一个 `#app`，script 由 `build.py` 追加）；`spec/gen.py` 从 `spec/ladders.json` 生成一份职业阶梯速查表，跟运行时无关。
 
 ---
 
